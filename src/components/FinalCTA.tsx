@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export function FinalCTA() {
+  const navigate = useNavigate();
+
   return (
     <section className="py-20 border-t border-border/50">
       <div className="container mx-auto px-6 text-center">
@@ -17,7 +20,12 @@ export function FinalCTA() {
           </p>
 
           <div className="mb-8">
-            <Button variant="hero" size="xl" className="text-lg px-12">
+            <Button 
+              variant="hero" 
+              size="xl" 
+              className="text-lg px-12"
+              onClick={() => navigate("/auth")}
+            >
               Solicitar Acceso a la Beta Privada
             </Button>
           </div>

@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import neuralHero from "@/assets/neural-hero.jpg";
 
 export function HeroSection() {
+  const navigate = useNavigate();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Neural Network Background */}
@@ -27,7 +30,12 @@ export function HeroSection() {
         </p>
 
         <div className="fade-in fade-in-delay-2">
-          <Button variant="hero" size="xl" className="text-lg">
+          <Button 
+            variant="hero" 
+            size="xl" 
+            className="text-lg"
+            onClick={() => navigate("/auth")}
+          >
             Solicitar Acceso
           </Button>
         </div>
